@@ -1,0 +1,30 @@
+// Write a Javascript program to calculate the Body Mass Index (BMI) using the formula BMI = weight (kg)/height * height
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" required>
+    <br>
+    <label for="height">Height (m):</label>
+    <input type="number" id="height" required>
+    <br>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const bmi = weight / (height * height);
+            document.getElementById('result').innerText = 'Your BMI is: ' + bmi.toFixed(2);
+        }
+    </script>
+</body>
+</html>
